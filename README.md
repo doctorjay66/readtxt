@@ -1,0 +1,2 @@
+# readtxt
+phonegap txt reader
