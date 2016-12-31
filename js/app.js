@@ -4,6 +4,7 @@ function init() {
 	console.log(cordova.file.applicationDirectory);	
 	window.resolveLocalFileSystemURL(cordova.file.applicationDirectory, function(f) {
 		console.dir(f);
+		alert(f);
 	}, fail);
 
 	//This alias is a read-only pointer to the app itself
@@ -20,6 +21,7 @@ function init() {
 function fail(e) {
 	console.log("FileSystem Error");
 	console.dir(e);
+	alert("FileSystem Error");
 }
 
 function gotFile(fileEntry) {
@@ -29,6 +31,7 @@ function gotFile(fileEntry) {
 
 		reader.onloadend = function(e) {
 			console.log("Text is: "+this.result);
+			alert("Text is: "+this.result);
 			document.querySelector("#textArea").innerHTML = this.result;
 		}
 
